@@ -10,6 +10,7 @@ const parties = [ "Alice" ];
 
 // Dev config
 const localConfig = {
+  isLocalDev,
   continuousUpdate,
   tokens: {}
 }
@@ -17,6 +18,7 @@ parties.map(p => localConfig.tokens[p] = createToken(p));
 
 // DABL config
 const dablConfig = {
+  isLocalDev,
   continuousUpdate,
   tokens: {
     Alice: "" // Copy token for Alice from DABL website
