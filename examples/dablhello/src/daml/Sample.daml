@@ -31,12 +31,3 @@ template HelloMessage
   where
     signatory sender
     observer recipient
-
-    controller recipient can
-      AcceptMessage : ()
-        do
-          return ()
-
-      RejectMessage : ()
-        do
-          return ()
