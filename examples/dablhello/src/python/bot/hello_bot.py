@@ -26,7 +26,7 @@ def main():
 
     party = partyNameMap.get(alice, None)
 
-    print(f'Starting a ledger for party {party!r} ({alice}) on {url}...')
+    print(f'Starting a ledger client for party {party!r} ({alice}) on {url}...')
     network = dazl.Network()
     network.set_config(url=url)
     client = network.aio_party(party)
