@@ -38,7 +38,7 @@ The local stack will consists of:
 daml new demo && cd demo && daml build
 
 # Start the local ledger. The scenario argument creates a single `Asset` contract.
-daml sandbox --ledgerid MyLedger .daml/dist/demo.dar --scenario Main:setup &
+daml sandbox --ledgerid MyLedger .daml/dist/*.dar --scenario Main:setup &
 
 # Start the REST adapter
 daml json-api --ledger-host localhost --ledger-port 6865 --http-port 7575 &
@@ -57,12 +57,12 @@ If you have followed the previous steps, you should be able to painlessly deploy
 1. Go to [https://projectdabl.com](https://projectdabl.com) and sign-up for an account.
 2. Create a new project (DerivHack2019) and ledger (staging).
 3. You should be prompted to upload your `*.dar` archives. Do so by drag-and-dropping required files.
-4. Under the `Active Contracts` tab, press the `+ Add Party` button and `+ New Contract` to create users and contracts, respectively, on the ledger.
-5. You can exercise choices that appear as buttons at the top of each selected contract. Note these will always have a `Party` field at the top - this is the submitting party.
-6. To use the REST API, you need to set up authentication as described [in the documentation](https://docs.projectdabl.com/#apiauthentication). Note that, the current version of the DABL REST API **is being updated to the official REST API** and should be available in the next few weeks.
-7. To enable your python/DAZL based automation processes, go to your DABL dashboard "Automation" tab, and drag-and-drop your `*.py` files.
+4. Under the `Live data` tab, press the `+ Add Party` button and `+ New Contract` to create users and contracts, respectively, on the ledger.
+5. You can exercise choices that appear as buttons at the top of each selected contract.
+6. To use the REST API, you need to set up authentication as described [in the documentation](https://docs.projectdabl.com/#apiauthentication). The ledger ID, party IDs and JWT tokens are available through the settings page.
+7. To enable your python/DAZL based automation processes, go to your DABL dashboard "Automation" tab, and drag-and-drop your `*.whl` files.
 
-Please bear in mind that, until further notice, we do not provide an SLA for the hosted environment, and it may be wiped at any time. It is currently managed out of NY. Having said this, I understand they have nearly met their goals of 99% uptime last quarter.
+We also have a [worked example](../examples/dablhello) of how to do all the above.
 
 ## Working with the CDM schema
 
